@@ -1,3 +1,5 @@
+# 일정 관리 시스템
+
 ```
 프로젝트 개요
  - 프로젝트 목적: 스프링 입문에 익숙해지기 위한 일정 관리 시스템 구현
@@ -143,5 +145,6 @@ Request Elements
 # ERD
 
 <img width="836" height="256" alt="image" src="https://github.com/user-attachments/assets/b3cc2ba9-2e8a-4224-a4c8-0279910e35c1" />
+
 
 
