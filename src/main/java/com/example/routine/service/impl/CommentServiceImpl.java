@@ -24,6 +24,10 @@ public class CommentServiceImpl implements CommentService {
         Date date = dateRepository.findById(id).orElseThrow(() ->
                 new CustomException(ErrorCode.NOT_FOUND_ID));
 
+        if (date.getComments().size() >= 10){
+            throw new CustomException(ErrorCode.TOO_MUCH_COMMENT);
+        }
+
         Comment comment = request.toEntity();
         comment.setModifiedAt(LocalDateTime.now());
         comment.setDate(date);
