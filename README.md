@@ -146,5 +146,28 @@ Request Elements
 
 <img width="836" height="256" alt="image" src="https://github.com/user-attachments/assets/b3cc2ba9-2e8a-4224-a4c8-0279910e35c1" />
 
+# POSTMAN 테스트
+제목 길이가 일정 제한을 넘어갈 경우
+<img width="1068" height="694" alt="image" src="https://github.com/user-attachments/assets/c711d481-683f-4548-a2c9-8511e2b9548e" />
 
+일정 생성
+<img width="1079" height="720" alt="image" src="https://github.com/user-attachments/assets/425aff60-f3d7-461d-bada-61fe0c51ae3a" />
+
+목록 조회
+<img width="1072" height="760" alt="image" src="https://github.com/user-attachments/assets/bcb88237-2ef4-43b8-a4e7-00eab7911a7a" />
+
+댓글 생성 제한
+<img width="1061" height="705" alt="image" src="https://github.com/user-attachments/assets/c4afc770-8132-43e1-974a-8ce20fd20f1d" />
+
+댓글 조회
+<img width="1067" height="874" alt="image" src="https://github.com/user-attachments/assets/00057982-f60f-482d-a31d-1fc6a5d482b7" />
+
+단건 조회
+<img width="1070" height="825" alt="image" src="https://github.com/user-attachments/assets/43bd3b67-a302-4481-acd0-83e1e94b9ba3" />
+
+일정 수정
+<img width="1064" height="708" alt="image" src="https://github.com/user-attachments/assets/e6580fca-485a-493e-bb84-32994c2a60dd" />
+
+일정 삭제
+<img width="1073" height="592" alt="image" src="https://github.com/user-attachments/assets/ebca4f07-ef6b-4cd6-87f8-09ce89f21e4a" />
 
