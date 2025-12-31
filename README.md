@@ -140,4 +140,8 @@ Request Elements
 | author   | String | 필수   | 저자   |
 | password | String | 필수   | 비밀번호 |
 
+# ERD
+
+<img width="836" height="256" alt="image" src="https://github.com/user-attachments/assets/b3cc2ba9-2e8a-4224-a4c8-0279910e35c1" />
+
 
