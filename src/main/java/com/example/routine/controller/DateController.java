@@ -28,15 +28,15 @@ public class DateController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> searchDateByAuthor(
-            @PathVariable long id
+    public ResponseEntity<?> searchDateById(
+            @PathVariable Long id
     ){
-        return ResponseEntity.ok(dateService.searchDateById(id));
+        return ResponseEntity.ok(dateService.searchDateCommentById(id));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateDate(
-            @PathVariable long id,
+            @PathVariable Long id,
             @Valid @RequestBody DateDto.Request request
     ){
         return ResponseEntity.ok(dateService.updateDate(id, request));
@@ -44,8 +44,6 @@ public class DateController {
 
     @DeleteMapping
     public void deleteDate(
-
-
             @RequestParam(name = "id") Long id,
             @RequestParam(name = "password") String password
     ){

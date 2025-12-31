@@ -3,23 +3,21 @@ package com.example.routine.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-public class Date extends BaseEntity {
+public class Comment extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private String content;
     private String author;
     private String password;
 
-    @OneToMany(mappedBy = "date")
-    private List<Comment> comments;
+    @ManyToOne
+    @JoinColumn(name = "date_id", nullable = false)
+    private Date date;
 }

@@ -1,5 +1,6 @@
 package com.example.routine.service;
 
+import com.example.routine.dto.DateCommentDto;
 import com.example.routine.dto.DateDto;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface DateService {
     DateDto.Response updateDate(Long id, DateDto.Request request);
 
     void deleteDate(Long id, String password);
+
+    DateCommentDto searchDateCommentById(Long id);
 }

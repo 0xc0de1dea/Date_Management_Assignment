@@ -1,8 +1,12 @@
 package com.example.routine.service.impl;
 
+import com.example.routine.dto.CommentDto;
+import com.example.routine.dto.DateCommentDto;
 import com.example.routine.dto.DateDto;
+import com.example.routine.entity.Comment;
 import com.example.routine.entity.Date;
 import com.example.routine.exception.CustomException;
+import com.example.routine.repository.CommentRepository;
 import com.example.routine.repository.DateRepository;
 import com.example.routine.service.DateService;
 import com.example.routine.type.ErrorCode;
@@ -19,6 +23,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DateServiceImpl implements DateService {
     private final DateRepository dateRepository;
+    private final CommentRepository commentRepository;
 
     @Override
     @Transactional
@@ -92,5 +97,30 @@ public class DateServiceImpl implements DateService {
         }
 
         dateRepository.delete(date);
+    }
+
+    @Override
+    public DateCommentDto searchDateCommentById(Long id) {
+        Date date = dateRepository.findById(id).orElseThrow(() ->
+                new CustomException(ErrorCode.NOT_FOUND_ID));
+
+        DateDto.Response dateDto = DateDto.Response.fromEntity(date);
+
+        List<Comment> respList = commentRepository.findByDateId(id);
+
+        List<CommentDto.Response> respDtoList = new ArrayList<>();
+
+        for (Comment comment : respList) {
+            respDtoList.add(CommentDto.Response.fromEntity(comment));
+        }
+
+        respDtoList.sort(Comparator.comparing(CommentDto.Response::getModifiedAt));
+
+        DateCommentDto datecommentDto = DateCommentDto.builder()
+                .date(dateDto)
+                .comments(respDtoList)
+                .build();
+
+        return datecommentDto;
     }
 }
