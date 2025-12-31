@@ -24,6 +24,10 @@ public class Date extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "date")
+    @OneToMany(
+            mappedBy = "date",
+            cascade = CascadeType.REMOVE,
+            orphanRemoval = true
+    )
     private List<Comment> comments;
 }
